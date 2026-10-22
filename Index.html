@@ -1,0 +1,125 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#8eeaff">
+<title>Xeno — Your Video Universe</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:"Trebuchet MS",Arial,sans-serif;color:#24536c;background:radial-gradient(circle at 15% 15%,white 0 3px,transparent 4px),linear-gradient(135deg,#bdf5ff,#e9fbff 48%,#e8f8ca);background-size:35px 35px,100% 100%;background-attachment:fixed}
+header{padding:22px 5%;background:linear-gradient(120deg,#70e3f7,#b5eaff,#e2f6b9);box-shadow:0 4px 15px #408eaa25}
+.brand{display:flex;align-items:center;gap:13px}
+.logo{width:58px;height:58px;border:3px solid white;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 20%,white,#73e8ff 35%,#299bdb 75%);font-size:30px;color:white;box-shadow:0 4px 12px #3889ae55}
+h1{margin:0;font-size:48px;letter-spacing:-3px;color:#1684bc;text-shadow:0 2px white}
+.tag{font-size:11px;font-weight:bold;letter-spacing:1px}
+.search{display:flex;gap:8px;margin-top:17px;max-width:750px}
+input,select{min-width:0;padding:12px;border:1px solid white;border-radius:18px;background:#ffffffeb;color:#24536c;box-shadow:inset 0 2px 4px #478da51c}
+.search input{flex:1}
+button{padding:10px 15px;border:1px solid white;border-radius:18px;background:linear-gradient(white,#bdefff);color:#245674;font-weight:bold;box-shadow:0 3px 8px #408eaa25;cursor:pointer}
+nav{position:sticky;top:0;z-index:3;display:flex;gap:8px;overflow:auto;padding:12px;background:#f9feffed;backdrop-filter:blur(12px)}
+nav button{white-space:nowrap}
+main{max-width:1200px;margin:auto;padding:20px}
+.hero,.panel,.sectionhead{border:1px solid white;border-radius:23px;background:linear-gradient(125deg,#ffffffed,#d9f8ff 55%,#efffdb);box-shadow:0 5px 18px #398bb51d,inset 0 1px white}
+.hero{padding:30px;margin:10px 0 30px;position:relative;overflow:hidden}
+.hero:after{content:"✦ ◉ ☆";position:absolute;right:18px;bottom:15px;font-size:48px;color:#8bdaf0}
+.hero h2{font-size:clamp(29px,6vw,48px);color:#187fb2;margin:12px 0}
+.hero p{max-width:620px;line-height:1.6}
+.section{margin:32px 0;scroll-margin-top:70px}
+.sectionhead{padding:16px 18px;margin-bottom:17px}
+.sectionhead h2{margin:0;color:#237da8}
+.sectionhead p{margin:7px 0 0;font-size:14px;line-height:1.6;color:#5d7f91}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:17px}
+.card{overflow:hidden;border:1px solid white;border-radius:19px;background:linear-gradient(150deg,white,#f0fcff);box-shadow:0 4px 13px #408eaa20}
+.thumb{height:150px;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,white 0 5px,transparent 6px),linear-gradient(135deg,#7feaff,#a4d9ff 55%,#d7f7ad);font-size:55px;color:white;text-shadow:0 3px 10px #398bb555}
+.thumb video{width:100%;height:100%;object-fit:cover}
+.cardbody{padding:13px}
+.card h3{font-size:17px;margin:0 0 7px;overflow-wrap:anywhere}
+.caption{font-size:13px;line-height:1.5;color:#688497}
+.meta{font-size:11px;font-weight:bold;color:#5b8ba3}
+.actions{display:flex;flex-wrap:wrap;gap:7px}
+.actions button{font-size:12px;padding:8px 10px}
+.panel{padding:18px;margin-bottom:18px}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px}
+label{display:grid;gap:6px;font-size:13px;font-weight:bold}
+.empty{padding:20px;border:1px dashed #9bcfdf;border-radius:18px;background:#ffffffa8;line-height:1.6}
+footer{text-align:center;padding:28px 12px;background:linear-gradient(120deg,#c7f3ff,#f0ffda,#d8edff);font-size:13px;line-height:1.8}
+@media(max-width:500px){main{padding:12px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.thumb{height:115px}.cardbody{padding:9px}.card h3{font-size:15px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand"><div class="logo">✦</div><div><h1>XENO</h1><div class="tag">YOUR VIDEO UNIVERSE ★</div></div></div>
+ <div class="search"><input id="q" placeholder="🔎 Search Xeno..." aria-label="Search"><button onclick="search()">SEARCH</button></div>
+</header>
+<nav>
+ <button onclick="go('fyp')">🌈 For You</button><button onclick="go('pods')">⚡ Xeno Pods</button><button onclick="go('trains')">🚆 Long Trains</button><button onclick="go('cds')">💿 CD Area</button><button onclick="go('channel')">👾 My Channel</button><button onclick="go('saved')">⭐ Saved</button><button onclick="go('upload')">＋ Upload</button>
+</nav>
+<main>
+ <section class="hero"><b>✦ WELCOME TO XENO ✦</b><h2>Your universe. Your vibe.</h2><p>Discover new videos, quick Pods, long adventures, and music for your digital CD collection.</p><button onclick="go('upload')">＋ Create</button> <button onclick="go('pods')">Explore Pods →</button></section>
+ <section class="section" id="fyp"><div class="sectionhead"><h2>🌈 For You</h2><p>A mix of videos from your Xeno universe. Save your favorites for later.</p></div><div class="grid" id="fypgrid"></div></section>
+ <section class="section" id="pods"><div class="sectionhead"><h2>⚡ Xeno Pods</h2><p>Short clips, funny moments, edits, and little adventures.</p></div><div class="grid" id="podsgrid"></div></section>
+ <section class="section" id="trains"><div class="sectionhead"><h2>🚆 Long Trains</h2><p>Long-form videos for when you want to settle in and watch.</p></div><div class="grid" id="trainsgrid"></div></section>
+ <section class="section" id="cds"><div class="sectionhead"><h2>💿 CD Area</h2><p>Your personal digital music shelf.</p></div><div class="panel"><h3>Add a song</h3><div class="form"><label>Song title<input id="songtitle" placeholder="Song name"></label><label>Artist<input id="artist" placeholder="Artist name"></label><label>Audio file<input id="audio" type="file" accept="audio/*"></label></div><p><button onclick="addSong()">Add to CDs</button></p></div><div class="grid" id="cdgrid"></div></section>
+ <section class="section" id="channel"><div class="sectionhead"><h2>👾 My Channel</h2><p>Your corner of Xeno. Set your channel name and share your creations.</p></div><div class="panel"><label>Channel name<input id="channelname" placeholder="My channel"></label><p><button onclick="saveChannel()">Save channel</button></p><p id="channelinfo"></p></div><div class="grid" id="channelgrid"></div></section>
+ <section class="section" id="saved"><div class="sectionhead"><h2>⭐ Saved Galaxy</h2><p>Videos you want to find again.</p></div><div class="grid" id="savedgrid"></div></section>
+ <section class="section" id="upload"><div class="sectionhead"><h2>⬆️ Creator Station</h2><p>Add a video with a title and caption.</p></div><div class="panel"><div class="form"><label>Video title<input id="title" placeholder="Video title"></label><label>Caption<input id="caption" placeholder="Write a caption"></label><label>Video type<select id="type"><option value="pod">Xeno Pod</option><option value="train">Long Train</option></select></label><label>Video file<input id="video" type="file" accept="video/*"></label></div><p><button onclick="upload()">🚀 Post video</button></p><p class="caption">Uploads in this starter version stay in this browser. They are not public to other users.</p></div></section>
+</main>
+<footer>✦ XENO ✦ YOUR VIDEO UNIVERSE ✦<br>Discover • Create • Collect<br>© 2026 Xeno — demo project</footer>
+<script>
+const DB='XenoStarterDB';let db;let videos=[],songs=[],query='';
+let saved=new Set(JSON.parse(localStorage.getItem('xenoSaved')||'[]'));
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function search(){query=document.getElementById('q').value.trim().toLowerCase();render()}
+function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function requestStore(store,method,item){
+ return new Promise((resolve,reject)=>{
+  const tx=db.transaction(store,'readwrite'),os=tx.objectStore(store);
+  const r=method==='getAll'?os.getAll():os.put(item);
+  r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);
+ });
+}
+function all(store){return requestStore(store,'getAll')}
+function put(store,item){return requestStore(store,'put',item)}
+function card(x,kind){
+ const isSong=kind==='song',id=esc(x.id),title=esc(x.title),caption=esc(x.caption||'');
+ const media=x.blob?`<${isSong?'audio':'video'} controls playsinline src="${URL.createObjectURL(x.blob)}" style="width:100%;height:100%;object-fit:cover"></${isSong?'audio':'video'}>`:'';
+ return `<article class="card"><div class="thumb">${media|| (isSong?'💿':'✦')}</div><div class="cardbody"><h3>${isSong?'💿 ':''}${title}</h3><p class="caption">${isSong?'Artist: '+esc(x.artist||'Unknown'):caption||'A Xeno video'}</p><p class="meta">${isSong?'CD AREA':x.type==='pod'?'⚡ XENO POD':'🚆 LONG TRAIN'}</p><div class="actions"><button onclick="toggle('${id}')">${saved.has(x.id)?'⭐ Saved':'☆ Save'}</button></div></div></article>`;
+}
+function toggle(id){if(saved.has(id))saved.delete(id);else saved.add(id);localStorage.setItem('xenoSaved',JSON.stringify([...saved]));render()}
+async function render(){
+ if(!db)return;
+ videos=(await all('videos')).filter(x=>[x.title,x.caption].join(' ').toLowerCase().includes(query));
+ songs=(await all('songs')).filter(x=>[x.title,x.artist].join(' ').toLowerCase().includes(query));
+ function paint(id,items,kind,msg){document.getElementById(id).innerHTML=items.length?items.map(x=>card(x,kind)).join(''):`<div class="empty">${msg}</div>`}
+ paint('fypgrid',videos,'video','🌟 Your FYP is ready for its first video.');
+ paint('podsgrid',videos.filter(x=>x.type==='pod'),'video','⚡ Upload your first Pod below.');
+ paint('trainsgrid',videos.filter(x=>x.type==='train'),'video','🚆 Your Long Trains will appear here.');
+ paint('cdgrid',songs,'song','💿 Add your first song above.');
+ paint('channelgrid',videos,'video','👾 Upload a video to start your channel.');
+ paint('savedgrid',[...videos.filter(x=>saved.has(x.id)),...songs.filter(x=>saved.has(x.id))],'video','⭐ Tap Save on a video or song to collect it.');
+ document.getElementById('channelname').value=localStorage.getItem('xenoChannel')||'';
+ document.getElementById('channelinfo').textContent='Channel: '+(localStorage.getItem('xenoChannel')||'Not named yet')+' · '+videos.length+' videos';
+}
+async function upload(){
+ const f=document.getElementById('video').files[0],title=document.getElementById('title').value.trim();
+ if(!f||!title){alert('Choose a video and give it a title first.');return}
+ if(f.size>100*1024*1024){alert('Choose a video under 100 MB.');return}
+ await put('videos',{id:'v'+Date.now(),title,caption:document.getElementById('caption').value,type:document.getElementById('type').value,blob:f});
+ document.getElementById('title').value='';document.getElementById('caption').value='';document.getElementById('video').value='';
+ await render();go('channel');
+}
+async function addSong(){
+ const f=document.getElementById('audio').files[0],title=document.getElementById('songtitle').value.trim();
+ if(!f||!title){alert('Choose audio and enter a song title.');return}
+ await put('songs',{id:'s'+Date.now(),title,artist:document.getElementById('artist').value,blob:f});
+ document.getElementById('songtitle').value='';document.getElementById('artist').value='';document.getElementById('audio').value='';
+ render();
+}
+function saveChannel(){const n=document.getElementById('channelname').value.trim();if(!n){alert('Enter a channel name.');return}localStorage.setItem('xenoChannel',n);render()}
+document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')search()});
+(async()=>{db=await new Promise((resolve,reject)=>{const r=indexedDB.open(DB,1);r.onupgradeneeded=()=>{r.result.createObjectStore('videos',{keyPath:'id'});r.result.createObjectStore('songs',{keyPath:'id'})};r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)});render()})().catch(()=>alert('Storage did not start. Try opening the page in Safari.'));
+</script>
+</body>
+</html>
